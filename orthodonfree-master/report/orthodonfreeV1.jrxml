@@ -1,0 +1,3536 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="orthodonfreeV1"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="567"
+		 columnSpacing="0"
+		 leftMargin="14"
+		 rightMargin="14"
+		 topMargin="14"
+		 bottomMargin="14"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="idpatient" isForPrompting="true" class="java.lang.Integer"/>
+	<queryString><![CDATA[SELECT nom, prenom, numsecu, DATENAISSANCE, DATECREATION, code_acte, cpt_traitement, asso.* FROM patient, associations as asso, types_traitements as tt where patient.id=$P{idpatient} and patient.id=asso.id_patient and id_types_traitements=tt.id and asso.encours=1]]></queryString>
+
+	<field name="NOM" class="java.lang.Object"/>
+	<field name="PRENOM" class="java.lang.Object"/>
+	<field name="NUMSECU" class="java.lang.String"/>
+	<field name="DATENAISSANCE" class="java.lang.Object"/>
+	<field name="DATECREATION" class="java.lang.Object"/>
+	<field name="code_acte" class="java.lang.Object"/>
+	<field name="cpt_traitement" class="java.lang.String"/>
+	<field name="id" class="java.lang.Object"/>
+	<field name="id_patient" class="java.lang.Object"/>
+	<field name="id_types_traitements" class="java.lang.Object"/>
+	<field name="date_debut_traitement" class="java.lang.Object"/>
+	<field name="date_proposition" class="java.lang.Object"/>
+	<field name="encours" class="java.lang.Object"/>
+	<field name="anBasMaxPro" class="java.lang.Object"/>
+	<field name="anBasMaxEndo" class="java.lang.Object"/>
+	<field name="anBasMaxHypo" class="java.lang.Object"/>
+	<field name="anBasMaxRetro" class="java.lang.Object"/>
+	<field name="anBasMaxExo" class="java.lang.Object"/>
+	<field name="anBasManPro" class="java.lang.Object"/>
+	<field name="anBasManEndo" class="java.lang.Object"/>
+	<field name="anBasManHyper" class="java.lang.Object"/>
+	<field name="anBasManRetro" class="java.lang.Object"/>
+	<field name="anBasManExo" class="java.lang.Object"/>
+	<field name="anAlvMaxPro" class="java.lang.Object"/>
+	<field name="anAlvMaxEndo" class="java.lang.Object"/>
+	<field name="anAlvMaxSupra" class="java.lang.Object"/>
+	<field name="anAlvMaxRetro" class="java.lang.Object"/>
+	<field name="anAlvMaxExo" class="java.lang.Object"/>
+	<field name="anAlvManPro" class="java.lang.Object"/>
+	<field name="anAlvManEndo" class="java.lang.Object"/>
+	<field name="anAlvManInfra" class="java.lang.Object"/>
+	<field name="anAlvManRetro" class="java.lang.Object"/>
+	<field name="anAlvManExo" class="java.lang.Object"/>
+	<field name="cdmCI_I" class="java.lang.Object"/>
+	<field name="cdmCI_II" class="java.lang.Object"/>
+	<field name="cdmCI_III" class="java.lang.Object"/>
+	<field name="cdmtxt" class="java.lang.Object"/>
+	<field name="cdcCI_I" class="java.lang.Object"/>
+	<field name="cdcCI_II" class="java.lang.Object"/>
+	<field name="cdcCI_III" class="java.lang.Object"/>
+	<field name="cdctxt" class="java.lang.Object"/>
+	<field name="dysDentMax" class="java.lang.Object"/>
+	<field name="dysDentDent" class="java.lang.Object"/>
+	<field name="agnesietxt" class="java.lang.Object"/>
+	<field name="dentInclSurnumtxt" class="java.lang.Object"/>
+	<field name="malpositiontxt" class="java.lang.Object"/>
+	<field name="occInvDroite" class="java.lang.Object"/>
+	<field name="occInvGauche" class="java.lang.Object"/>
+	<field name="occInvAnt" class="java.lang.Object"/>
+	<field name="facteurFoncttxt" class="java.lang.Object"/>
+	<field name="planTraittxt" class="java.lang.Object"/>
+	<field name="commentaires" class="java.lang.Object"/>
+	<field name="dateEP" class="java.lang.Object"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="802"  isSplitAllowed="true" >
+				<rectangle radius="7" >
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="28"
+						width="567"
+						height="774"
+						forecolor="#12540D"
+						backcolor="#12540D"
+						key="rectangle-1"/>
+					<graphicElement stretchType="NoStretch" fill="Solid" />
+				</rectangle>
+				<rectangle radius="6" >
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="35"
+						width="280"
+						height="99"
+						backcolor="#A9C7AB"
+						key="rectangle-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<elementGroup><!--  Start: 1 !-->
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="11"
+						y="46"
+						width="262"
+						height="84"
+						key="rectangle-3"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="22"
+						y="50"
+						width="142"
+						height="12"
+						key="staticText-1"
+						isPrintRepeatedValues="false"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Docteur Henri DELLESTABLE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="22"
+						y="63"
+						width="110"
+						height="12"
+						key="staticText-2"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[19- Chirurgie Dentaire]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="147"
+						y="62"
+						width="69"
+						height="12"
+						key="staticText-3"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[conventionné]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="22"
+						y="82"
+						width="110"
+						height="12"
+						key="staticText-4"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[23 Allées Brouchet]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="22"
+						y="93"
+						width="125"
+						height="12"
+						key="staticText-5"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[40 000 MONT DE MARSAN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="154"
+						y="84"
+						width="46"
+						height="10"
+						key="staticText-6"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Agr.Radio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="152"
+						y="95"
+						width="64"
+						height="10"
+						key="staticText-7"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[123841/01 E1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="22"
+						y="110"
+						width="205"
+						height="19"
+						key="staticText-8"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica" size="14" isBold="false"/>
+					</textElement>
+				<text><![CDATA[=> 40 4 00519 1  00 1 20 1 19]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="11"
+						y="37"
+						width="229"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-9"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica" size="7" isBold="false"/>
+					</textElement>
+				<text><![CDATA[IDENTIFICATION DU CHIRURGIEN DENTISTE OU CENTRE DE SOINS]]></text>
+				</staticText>
+				</elementGroup><!-- End 1 !-->
+				<elementGroup><!--  Start: 2 !-->
+				<rectangle radius="6" >
+					<reportElement
+						mode="Opaque"
+						x="283"
+						y="35"
+						width="142"
+						height="99"
+						backcolor="#A9C7AB"
+						key="rectangle-4"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="296"
+						y="39"
+						width="98"
+						height="22"
+						forecolor="#12540D"
+						key="staticText-10"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="5" isBold="true"/>
+					</textElement>
+				<text><![CDATA[- Si les soins sont dispensés à titre libéral, dans un établisement de soins,          Cachet de cet établissement]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						x="286"
+						y="62"
+						width="135"
+						height="65"
+						key="rectangle-5"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				</elementGroup><!-- End 2 !-->
+				<elementGroup><!--  Start: 3 !-->
+				<rectangle radius="6" >
+					<reportElement
+						mode="Opaque"
+						x="427"
+						y="35"
+						width="140"
+						height="99"
+						backcolor="#A9C7AB"
+						key="rectangle-6"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="437"
+						y="40"
+						width="98"
+						height="13"
+						forecolor="#12540D"
+						key="staticText-11"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="5" isBold="true"/>
+					</textElement>
+				<text><![CDATA[- Si les soins sont dispensés par un chirurgien dentiste salarié]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="438"
+						y="59"
+						width="68"
+						height="6"
+						forecolor="#12540D"
+						key="staticText-12"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="5" isBold="true"/>
+					</textElement>
+				<text><![CDATA[NOM du chirurgien dentiste]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						x="432"
+						y="80"
+						width="123"
+						height="12"
+						forecolor="#12540D"
+						key="rectangle-7"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="432"
+						y="101"
+						width="123"
+						height="12"
+						forecolor="#12540D"
+						key="rectangle-8"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="432"
+						y="118"
+						width="98"
+						height="9"
+						forecolor="#12540D"
+						key="staticText-13"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[IDENTIFICATION]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="445"
+						y="108"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="459"
+						y="108"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="473"
+						y="108"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-3"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="487"
+						y="108"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-4"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="500"
+						y="108"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-5"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="514"
+						y="108"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-6"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="528"
+						y="108"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-7"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="541"
+						y="108"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-8"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				</elementGroup><!-- End 3 !-->
+				<staticText>
+					<reportElement
+						x="166"
+						y="139"
+						width="228"
+						height="13"
+						forecolor="#FFFFFF"
+						key="staticText-19"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<text><![CDATA[PARTIE RESERVEE AU CHIRURGIEN DENTISTE TRAITANT]]></text>
+				</staticText>
+				<elementGroup><!--  Start: 4 !-->
+				<rectangle radius="6" >
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="152"
+						width="567"
+						height="153"
+						backcolor="#A9C7AB"
+						key="rectangle-11"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="78"
+						y="175"
+						width="161"
+						height="17"
+						forecolor="#12540D"
+						key="staticText-20"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+				<text><![CDATA[Références Nationales Opposables]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="373"
+						y="176"
+						width="14"
+						height="10"
+						forecolor="#12540D"
+						key="rectangle-12"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="481"
+						y="176"
+						width="14"
+						height="10"
+						forecolor="#12540D"
+						key="rectangle-13"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="415"
+						y="272"
+						width="14"
+						height="10"
+						forecolor="#12540D"
+						key="rectangle-15"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="354"
+						y="176"
+						width="10"
+						height="15"
+						forecolor="#12540D"
+						key="staticText-21"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+				<text><![CDATA[R]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="460"
+						y="176"
+						width="19"
+						height="16"
+						forecolor="#12540D"
+						key="staticText-22"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+				<text><![CDATA[HR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="20"
+						y="203"
+						width="161"
+						height="17"
+						forecolor="#12540D"
+						key="staticText-23"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+				<text><![CDATA[Date de la proposition]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="20"
+						y="227"
+						width="161"
+						height="17"
+						forecolor="#12540D"
+						key="staticText-24"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+				<text><![CDATA[Date de début effectif du traitement]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="20"
+						y="249"
+						width="161"
+						height="17"
+						forecolor="#12540D"
+						key="staticText-25"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+				<text><![CDATA[Cotation des actes]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="20"
+						y="272"
+						width="161"
+						height="17"
+						forecolor="#12540D"
+						key="staticText-26"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+				<text><![CDATA[Un devis a-t-il été remis à l'assuré :]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						x="186"
+						y="199"
+						width="106"
+						height="11"
+						forecolor="#FFFFFF"
+						key="rectangle-16"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+</graphicElement>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						x="186"
+						y="224"
+						width="106"
+						height="11"
+						forecolor="#FFFFFF"
+						key="rectangle-17"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						x="186"
+						y="247"
+						width="106"
+						height="11"
+						forecolor="#FFFFFF"
+						key="rectangle-18"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="248"
+						y="272"
+						width="23"
+						height="17"
+						forecolor="#12540D"
+						key="staticText-27"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+				<text><![CDATA[OUI]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="386"
+						y="272"
+						width="25"
+						height="17"
+						forecolor="#12540D"
+						key="staticText-28"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+				<text><![CDATA[NON]]></text>
+				</staticText>
+				</elementGroup><!-- End 4 !-->
+				<line direction="TopDown">
+					<reportElement
+						x="7"
+						y="319"
+						width="560"
+						height="0"
+						forecolor="#FFFFFF"
+						key="line-9"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+</graphicElement>
+				</line>
+				<elementGroup><!--  Start: 5 !-->
+				<rectangle radius="6" >
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="321"
+						width="281"
+						height="103"
+						backcolor="#A9C7AB"
+						key="rectangle-20"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="11"
+						y="331"
+						width="258"
+						height="90"
+						key="rectangle-19"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="22"
+						y="335"
+						width="142"
+						height="12"
+						key="staticText-29"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Docteur Henri DELLESTABLE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="22"
+						y="348"
+						width="110"
+						height="12"
+						key="staticText-30"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[19- Chirurgie Dentaire]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="147"
+						y="347"
+						width="69"
+						height="12"
+						key="staticText-31"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[conventionné]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="22"
+						y="367"
+						width="110"
+						height="12"
+						key="staticText-32"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[23 Allées Brouchet]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="22"
+						y="378"
+						width="125"
+						height="12"
+						key="staticText-33"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[40 000 MONT DE MARSAN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="154"
+						y="369"
+						width="46"
+						height="10"
+						key="staticText-34"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Agr.Radio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="152"
+						y="380"
+						width="64"
+						height="10"
+						key="staticText-35"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[123841/01 E1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="22"
+						y="395"
+						width="218"
+						height="26"
+						key="staticText-36"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica" size="14" isBold="false"/>
+					</textElement>
+				<text><![CDATA[=> 40 4 00519 1  00 1 20 1 19]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="23"
+						y="322"
+						width="229"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-37"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica" size="7" isBold="false"/>
+					</textElement>
+				<text><![CDATA[IDENTIFICATION DU CHIRURGIEN DENTISTE OU CENTRE DE SOINS]]></text>
+				</staticText>
+				</elementGroup><!-- End 5 !-->
+				<elementGroup><!--  Start: 6 !-->
+				<rectangle radius="6" >
+					<reportElement
+						mode="Opaque"
+						x="282"
+						y="321"
+						width="143"
+						height="103"
+						backcolor="#A9C7AB"
+						key="rectangle-21"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="307"
+						y="323"
+						width="98"
+						height="22"
+						forecolor="#12540D"
+						key="staticText-38"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="5" isBold="true"/>
+					</textElement>
+				<text><![CDATA[- Si les soins sont dispensés à titre libéral, dans un établisement de soins,          Cachet de cet établissement]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						x="286"
+						y="346"
+						width="135"
+						height="68"
+						key="rectangle-22"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				</elementGroup><!-- End 6 !-->
+				<elementGroup><!--  Start: 7 !-->
+				<rectangle radius="6" >
+					<reportElement
+						mode="Opaque"
+						x="427"
+						y="321"
+						width="140"
+						height="103"
+						backcolor="#A9C7AB"
+						key="rectangle-23"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="453"
+						y="325"
+						width="98"
+						height="17"
+						forecolor="#12540D"
+						key="staticText-39"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="5" isBold="true"/>
+					</textElement>
+				<text><![CDATA[- Si les soins sont dispensés par un chirurgien dentiste salarié]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="451"
+						y="343"
+						width="68"
+						height="9"
+						forecolor="#12540D"
+						key="staticText-40"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="5" isBold="true"/>
+					</textElement>
+				<text><![CDATA[NOM du chirurgien dentiste]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						x="432"
+						y="364"
+						width="123"
+						height="12"
+						forecolor="#12540D"
+						key="rectangle-24"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="432"
+						y="385"
+						width="122"
+						height="12"
+						forecolor="#12540D"
+						key="rectangle-25"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="453"
+						y="402"
+						width="98"
+						height="9"
+						forecolor="#12540D"
+						key="staticText-41"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[IDENTIFICATION]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="445"
+						y="392"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-10"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="458"
+						y="392"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-11"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="472"
+						y="392"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-12"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="486"
+						y="392"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-13"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="499"
+						y="392"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-14"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="513"
+						y="392"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-15"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="526"
+						y="392"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-16"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="539"
+						y="392"
+						width="0"
+						height="5"
+						forecolor="#12540D"
+						key="line-17"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				</elementGroup><!-- End 7 !-->
+				<elementGroup><!--  Start: 8 !-->
+				<rectangle radius="6" >
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="426"
+						width="567"
+						height="27"
+						backcolor="#A9C7AB"
+						key="rectangle-26"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="9"
+						y="427"
+						width="114"
+						height="11"
+						forecolor="#12540D"
+						key="staticText-42"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="7"/>
+					</textElement>
+				<text><![CDATA[NOM et PRENOM DU PATIENT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9"
+						y="434"
+						width="172"
+						height="13"
+						forecolor="#12540D"
+						key="staticText-43"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="5"/>
+					</textElement>
+				<text><![CDATA[(à remplir par le praticien selon les indications de l'intéressé())]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9"
+						y="441"
+						width="79"
+						height="13"
+						forecolor="#12540D"
+						key="staticText-44"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Date de naissance]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="127"
+						y="440"
+						width="63"
+						height="10"
+						forecolor="#FFFFFF"
+						key="rectangle-27"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="186"
+						y="428"
+						width="352"
+						height="10"
+						forecolor="#FFFFFF"
+						key="rectangle-28"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="222"
+						y="441"
+						width="116"
+						height="10"
+						forecolor="#12540D"
+						key="staticText-45"
+						isPrintRepeatedValues="false"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="7"/>
+					</textElement>
+				<text><![CDATA[N° immatriculation de l'assurée(e)]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="337"
+						y="440"
+						width="187"
+						height="11"
+						forecolor="#FFFFFF"
+						key="rectangle-29"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="337"
+						y="439"
+						width="187"
+						height="0"
+						forecolor="#12540D"
+						key="line-18"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+</graphicElement>
+				</line>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="538"
+						y="440"
+						width="18"
+						height="11"
+						forecolor="#FFFFFF"
+						key="rectangle-30"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				</elementGroup><!-- End 8 !-->
+				<elementGroup><!--  Start: 9 !-->
+				<rectangle radius="6" >
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="453"
+						width="567"
+						height="325"
+						backcolor="#A9C7AB"
+						key="rectangle-31"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="7"
+						y="459"
+						width="161"
+						height="13"
+						forecolor="#12540D"
+						key="staticText-46"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[(1) Mettre une croix dans la case concernée]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="190"
+						y="456"
+						width="182"
+						height="23"
+						forecolor="#12540D"
+						key="staticText-47"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[RENSEIGNEMENT MEDICAUX (1)  TRAITEMENT D'ORTHOPEDIE DENTO-FACIAL]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="5"
+						y="483"
+						width="14"
+						height="12"
+						forecolor="#12540D"
+						key="rectangle-32"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="5"
+						y="495"
+						width="14"
+						height="12"
+						forecolor="#12540D"
+						key="rectangle-33"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="200"
+						y="484"
+						width="14"
+						height="11"
+						forecolor="#12540D"
+						key="rectangle-34"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="200"
+						y="495"
+						width="14"
+						height="12"
+						forecolor="#12540D"
+						key="rectangle-35"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="328"
+						y="483"
+						width="31"
+						height="24"
+						forecolor="#FFFFFF"
+						key="rectangle-36"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="298"
+						y="503"
+						width="31"
+						height="1"
+						forecolor="#12540D"
+						key="line-19"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.0" lineStyle="Dotted"/>
+</graphicElement>
+				</line>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="411"
+						y="484"
+						width="14"
+						height="12"
+						forecolor="#12540D"
+						key="rectangle-38"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="26"
+						y="484"
+						width="77"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-48"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Début de traitement]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="27"
+						y="495"
+						width="77"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-49"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Surveillance]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="5"
+						y="506"
+						width="77"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-50"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[DIAGNOSTIC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="220"
+						y="484"
+						width="77"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-51"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Suite semestre n°]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="220"
+						y="494"
+						width="80"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-52"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Contention - année n°]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="431"
+						y="484"
+						width="30"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-53"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Autres]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="411"
+						y="497"
+						width="30"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-54"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[lesquels]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="460"
+						y="496"
+						width="87"
+						height="12"
+						forecolor="#FFFFFF"
+						key="rectangle-39"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="94"
+						y="506"
+						width="202"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-55"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="7"/>
+					</textElement>
+				<text><![CDATA[(uniquement lors d'une 1ère demande ou d'un réévaluation)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="145"
+						y="527"
+						width="88"
+						height="11"
+						forecolor="#12540D"
+						key="staticText-56"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Anomalie(s) basale(s) :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="353"
+						y="527"
+						width="97"
+						height="11"
+						forecolor="#12540D"
+						key="staticText-57"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Anomalie(s) alvéolaire(s) :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="145"
+						y="536"
+						width="34"
+						height="10"
+						forecolor="#12540D"
+						key="staticText-58"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Maxillaire]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="256"
+						y="536"
+						width="51"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-59"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Mandibulaire]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="12"
+						y="549"
+						width="51"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-60"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Sens sagittal]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="12"
+						y="561"
+						width="65"
+						height="10"
+						forecolor="#12540D"
+						key="staticText-61"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Sens transversal]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="12"
+						y="572"
+						width="65"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-62"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Sens vertical]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="105"
+						y="546"
+						width="14"
+						height="36"
+						forecolor="#12540D"
+						key="rectangle-40"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="105"
+						y="558"
+						width="14"
+						height="0"
+						forecolor="#12540D"
+						key="line-20"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="106"
+						y="570"
+						width="14"
+						height="0"
+						forecolor="#12540D"
+						key="line-21"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="134"
+						y="549"
+						width="23"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-63"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Pro]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="134"
+						y="561"
+						width="30"
+						height="10"
+						forecolor="#12540D"
+						key="staticText-64"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Endo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="134"
+						y="572"
+						width="64"
+						height="10"
+						forecolor="#12540D"
+						key="staticText-65"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Hypodivergence]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="166"
+						y="546"
+						width="14"
+						height="24"
+						forecolor="#12540D"
+						key="rectangle-41"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="166"
+						y="558"
+						width="14"
+						height="0"
+						forecolor="#12540D"
+						key="line-22"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="184"
+						y="546"
+						width="23"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-66"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Retro]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="184"
+						y="559"
+						width="23"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-67"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Exo]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="211"
+						y="546"
+						width="14"
+						height="34"
+						forecolor="#12540D"
+						key="rectangle-42"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="211"
+						y="557"
+						width="14"
+						height="0"
+						forecolor="#12540D"
+						key="line-23"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="211"
+						y="568"
+						width="14"
+						height="0"
+						forecolor="#12540D"
+						key="line-24"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="226"
+						y="549"
+						width="23"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-68"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Pro]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="227"
+						y="561"
+						width="28"
+						height="10"
+						forecolor="#12540D"
+						key="staticText-69"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Endo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="227"
+						y="572"
+						width="64"
+						height="10"
+						forecolor="#12540D"
+						key="staticText-70"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Hypodivergence]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="280"
+						y="546"
+						width="14"
+						height="22"
+						forecolor="#12540D"
+						key="rectangle-43"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="280"
+						y="557"
+						width="14"
+						height="0"
+						forecolor="#12540D"
+						key="line-25"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="295"
+						y="547"
+						width="23"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-71"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Retro]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="295"
+						y="558"
+						width="23"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-72"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Exo]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						x="326"
+						y="546"
+						width="3"
+						height="34"
+						forecolor="#12540D"
+						backcolor="#12540D"
+						key="rectangle-44"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="351"
+						y="546"
+						width="14"
+						height="34"
+						forecolor="#12540D"
+						key="rectangle-45"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="351"
+						y="557"
+						width="14"
+						height="0"
+						forecolor="#12540D"
+						key="line-26"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="351"
+						y="569"
+						width="14"
+						height="0"
+						forecolor="#12540D"
+						key="line-27"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="368"
+						y="549"
+						width="23"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-73"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Pro]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="368"
+						y="559"
+						width="25"
+						height="11"
+						forecolor="#12540D"
+						key="staticText-74"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Endo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="368"
+						y="571"
+						width="64"
+						height="10"
+						forecolor="#12540D"
+						key="staticText-75"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Supraclusion]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="410"
+						y="546"
+						width="14"
+						height="22"
+						forecolor="#12540D"
+						key="rectangle-46"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="410"
+						y="557"
+						width="14"
+						height="0"
+						forecolor="#12540D"
+						key="line-28"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="427"
+						y="547"
+						width="23"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-76"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Retro]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="427"
+						y="558"
+						width="23"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-77"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Exo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="392"
+						y="537"
+						width="51"
+						height="10"
+						forecolor="#12540D"
+						key="staticText-78"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Maxillaire]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="482"
+						y="536"
+						width="51"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-79"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Mandibulaire]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="460"
+						y="546"
+						width="14"
+						height="34"
+						forecolor="#12540D"
+						key="rectangle-47"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="460"
+						y="558"
+						width="14"
+						height="0"
+						forecolor="#12540D"
+						key="line-29"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="460"
+						y="570"
+						width="14"
+						height="0"
+						forecolor="#12540D"
+						key="line-30"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="476"
+						y="548"
+						width="23"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-80"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Pro]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="476"
+						y="560"
+						width="29"
+						height="11"
+						forecolor="#12540D"
+						key="staticText-81"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Endo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="476"
+						y="571"
+						width="64"
+						height="10"
+						forecolor="#12540D"
+						key="staticText-82"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Intraclusion]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="524"
+						y="546"
+						width="14"
+						height="22"
+						forecolor="#12540D"
+						key="rectangle-48"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="524"
+						y="557"
+						width="14"
+						height="0"
+						forecolor="#12540D"
+						key="line-31"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="540"
+						y="547"
+						width="22"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-83"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Retro]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="541"
+						y="558"
+						width="21"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-84"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Exo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="17"
+						y="596"
+						width="89"
+						height="9"
+						forecolor="#12540D"
+						key="staticText-85"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="7"/>
+					</textElement>
+				<text><![CDATA[Classe dentaire molaire]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="100"
+						y="595"
+						width="14"
+						height="10"
+						forecolor="#12540D"
+						key="rectangle-49"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="116"
+						y="595"
+						width="17"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-86"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[CI.I]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="136"
+						y="595"
+						width="14"
+						height="10"
+						forecolor="#12540D"
+						key="rectangle-50"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="152"
+						y="595"
+						width="21"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-87"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[CI.II]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="171"
+						y="595"
+						width="14"
+						height="10"
+						forecolor="#12540D"
+						key="rectangle-51"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="187"
+						y="595"
+						width="21"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-88"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[CI.III]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="206"
+						y="595"
+						width="55"
+						height="10"
+						forecolor="#FFFFFF"
+						key="rectangle-52"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="303"
+						y="595"
+						width="83"
+						height="10"
+						forecolor="#12540D"
+						key="staticText-89"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Classe dentaire canine]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="388"
+						y="595"
+						width="14"
+						height="10"
+						forecolor="#12540D"
+						key="rectangle-54"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="404"
+						y="595"
+						width="16"
+						height="11"
+						forecolor="#12540D"
+						key="staticText-90"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[CI.I]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="441"
+						y="595"
+						width="21"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-91"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[CI.II]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="476"
+						y="595"
+						width="21"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-92"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[CI.III]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="495"
+						y="595"
+						width="55"
+						height="10"
+						forecolor="#FFFFFF"
+						key="rectangle-55"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="425"
+						y="595"
+						width="14"
+						height="10"
+						forecolor="#12540D"
+						key="rectangle-56"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="460"
+						y="595"
+						width="14"
+						height="10"
+						forecolor="#12540D"
+						key="rectangle-57"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="5"
+						y="607"
+						width="14"
+						height="12"
+						forecolor="#12540D"
+						key="rectangle-58"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="22"
+						y="608"
+						width="123"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-93"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Dysharmonie dento-maxillaire]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="326"
+						y="606"
+						width="12"
+						height="12"
+						forecolor="#12540D"
+						key="rectangle-59"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="340"
+						y="607"
+						width="118"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-94"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Dysharmonie dento-dentaire]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="12"
+						y="620"
+						width="50"
+						height="13"
+						forecolor="#12540D"
+						key="staticText-95"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Agénésie(s)]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="56"
+						y="619"
+						width="108"
+						height="11"
+						forecolor="#FFFFFF"
+						key="rectangle-60"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="150"
+						y="630"
+						width="12"
+						height="12"
+						forecolor="#12540D"
+						key="rectangle-61"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="192"
+						y="620"
+						width="81"
+						height="9"
+						forecolor="#12540D"
+						key="staticText-96"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="7"/>
+					</textElement>
+				<text><![CDATA[Dent(s) incl. ou Surnum.]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="272"
+						y="619"
+						width="108"
+						height="10"
+						forecolor="#FFFFFF"
+						key="rectangle-62"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="407"
+						y="619"
+						width="49"
+						height="9"
+						forecolor="#12540D"
+						key="staticText-97"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="7"/>
+					</textElement>
+				<text><![CDATA[Malposition(s)]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="454"
+						y="619"
+						width="107"
+						height="10"
+						forecolor="#FFFFFF"
+						key="rectangle-63"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="215"
+						y="630"
+						width="12"
+						height="12"
+						forecolor="#12540D"
+						key="rectangle-64"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="287"
+						y="630"
+						width="12"
+						height="12"
+						forecolor="#12540D"
+						key="rectangle-65"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="20"
+						y="633"
+						width="74"
+						height="14"
+						forecolor="#12540D"
+						key="staticText-98"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Occlusion inversée]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="164"
+						y="632"
+						width="29"
+						height="9"
+						forecolor="#12540D"
+						key="staticText-99"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="7"/>
+					</textElement>
+				<text><![CDATA[Droite]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="229"
+						y="632"
+						width="29"
+						height="9"
+						forecolor="#12540D"
+						key="staticText-100"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="7"/>
+					</textElement>
+				<text><![CDATA[Gauche]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="301"
+						y="631"
+						width="41"
+						height="9"
+						forecolor="#12540D"
+						key="staticText-101"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="7"/>
+					</textElement>
+				<text><![CDATA[Antérieure]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="20"
+						y="656"
+						width="87"
+						height="10"
+						forecolor="#12540D"
+						key="staticText-102"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[Facteur(s) fonctionnel(s)]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="143"
+						y="654"
+						width="412"
+						height="13"
+						forecolor="#FFFFFF"
+						key="rectangle-66"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="6"
+						y="678"
+						width="458"
+						height="9"
+						forecolor="#12540D"
+						key="staticText-103"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="7"/>
+					</textElement>
+				<text><![CDATA[PLAN DE TRAITEMENT (Y COMPRIS LES MOYENS THERAPEUTIQUES PREVUS) (uniquement lors d'une 1ère demande ou d'une réévaluation)]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="10"
+						y="691"
+						width="545"
+						height="35"
+						forecolor="#FFFFFF"
+						key="rectangle-67"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+</graphicElement>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="11"
+						y="715"
+						width="544"
+						height="1"
+						forecolor="#12540D"
+						key="line-33"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="11"
+						y="702"
+						width="543"
+						height="1"
+						forecolor="#12540D"
+						key="line-34"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="40"
+						y="703"
+						width="38"
+						height="15"
+						key="staticText-104">
+							<printWhenExpression><![CDATA[new Boolean((($F{code_acte}.equals("TO90")) && ($F{cpt_traitement}.equals("1"))))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font fontName="Arial"/>
+					</textElement>
+				<text><![CDATA[Ci-joint]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="5"
+						y="735"
+						width="65"
+						height="9"
+						forecolor="#12540D"
+						key="staticText-105"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="8"/>
+					</textElement>
+				<text><![CDATA[COMMENTAIRES]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="221"
+						y="738"
+						width="334"
+						height="10"
+						forecolor="#FFFFFF"
+						key="rectangle-69"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="10"
+						y="748"
+						width="545"
+						height="24"
+						forecolor="#FFFFFF"
+						key="rectangle-68"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="21"
+						y="761"
+						width="532"
+						height="0"
+						forecolor="#12540D"
+						key="line-35"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="221"
+						y="748"
+						width="334"
+						height="0"
+						forecolor="#12540D"
+						key="line-36"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+</graphicElement>
+				</line>
+				</elementGroup><!-- End 9 !-->
+				<elementGroup><!--  Start: 10 !-->
+				<rectangle radius="6" >
+					<reportElement
+						mode="Opaque"
+						x="3"
+						y="781"
+						width="159"
+						height="20"
+						backcolor="#A9C7AB"
+						key="rectangle-70"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="32"
+						y="782"
+						width="95"
+						height="20"
+						forecolor="#12540D"
+						key="staticText-106"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="6"/>
+					</textElement>
+				<text><![CDATA[Signature du Chirurgien Dentiste]]></text>
+				</staticText>
+				<rectangle radius="6" >
+					<reportElement
+						mode="Opaque"
+						x="163"
+						y="781"
+						width="200"
+						height="21"
+						backcolor="#FFFFFF"
+						key="rectangle-71"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<rectangle radius="6" >
+					<reportElement
+						mode="Opaque"
+						x="363"
+						y="781"
+						width="198"
+						height="21"
+						backcolor="#FFFFFF"
+						key="rectangle-72"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="364"
+						y="789"
+						width="25"
+						height="9"
+						forecolor="#12540D"
+						key="staticText-107"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[DATE :]]></text>
+				</staticText>
+				</elementGroup><!-- End 10 !-->
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="200"
+						y="428"
+						width="319"
+						height="12"
+						forecolor="#000000"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[""+$F{NOM}+ " "+ $F{PRENOM}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="343"
+						y="441"
+						width="177"
+						height="19"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[(($F{NUMSECU}.toString().equals("O"))?"VIDE":$F{NUMSECU}.toString().substring(0,$F{NUMSECU}.length()-2))]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="131"
+						y="441"
+						width="55"
+						height="11"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[""+new SimpleDateFormat("dd-MM-yyyy").format(new Date(Long.parseLong(""+$F{DATENAISSANCE})))]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="191"
+						y="223"
+						width="85"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[""+$F{date_debut_traitement}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="190"
+						y="199"
+						width="100"
+						height="17"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[""+$F{date_proposition}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="192"
+						y="247"
+						width="84"
+						height="16"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[""+$F{code_acte}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="108"
+						y="547"
+						width="20"
+						height="15"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anBasMaxPro}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="108"
+						y="559"
+						width="20"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anBasMaxEndo}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="108"
+						y="571"
+						width="20"
+						height="16"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anBasMaxHypo}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="167"
+						y="547"
+						width="20"
+						height="15"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anBasMaxRetro}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="167"
+						y="559"
+						width="20"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anBasMaxExo}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="214"
+						y="547"
+						width="23"
+						height="22"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anBasManPro}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="214"
+						y="558"
+						width="23"
+						height="22"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anBasManEndo}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="214"
+						y="569"
+						width="17"
+						height="12"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anBasManHyper}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="282"
+						y="547"
+						width="25"
+						height="16"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anBasManRetro}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="282"
+						y="558"
+						width="25"
+						height="12"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anBasManExo}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="354"
+						y="547"
+						width="20"
+						height="16"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anAlvMaxPro}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="354"
+						y="559"
+						width="22"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anAlvMaxEndo}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="354"
+						y="570"
+						width="21"
+						height="17"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anAlvMaxSupra}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="412"
+						y="546"
+						width="21"
+						height="17"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anAlvMaxRetro}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="412"
+						y="557"
+						width="24"
+						height="15"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anAlvMaxExo}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="462"
+						y="546"
+						width="24"
+						height="17"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anAlvManPro}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="462"
+						y="559"
+						width="24"
+						height="22"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anAlvManEndo}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="462"
+						y="571"
+						width="24"
+						height="16"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anAlvManInfra}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="527"
+						y="547"
+						width="28"
+						height="23"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anAlvManRetro}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="527"
+						y="558"
+						width="24"
+						height="23"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{anAlvManExo}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="103"
+						y="595"
+						width="22"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{cdmCI_I}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="139"
+						y="595"
+						width="17"
+						height="12"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{cdmCI_II}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="174"
+						y="595"
+						width="18"
+						height="12"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{cdmCI_III}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="208"
+						y="594"
+						width="64"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[""+$F{cdmtxt}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="390"
+						y="594"
+						width="15"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{cdcCI_I}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="427"
+						y="594"
+						width="18"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{cdcCI_II}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="463"
+						y="594"
+						width="17"
+						height="12"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{cdcCI_III}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="498"
+						y="594"
+						width="57"
+						height="12"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[""+$F{cdctxt}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="8"
+						y="607"
+						width="18"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{dysDentMax}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="329"
+						y="606"
+						width="26"
+						height="19"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{dysDentDent}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="152"
+						y="631"
+						width="17"
+						height="16"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{occInvDroite}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="218"
+						y="631"
+						width="16"
+						height="15"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{occInvGauche}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="631"
+						width="17"
+						height="15"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($F{occInvAnt}.toString().equals("1")?"X":" ")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="58"
+						y="618"
+						width="106"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[""+$F{agnesietxt}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="275"
+						y="618"
+						width="98"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[""+$F{dentInclSurnumtxt}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="458"
+						y="618"
+						width="97"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[""+$F{malpositiontxt}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="153"
+						y="654"
+						width="382"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[""+$F{facteurFoncttxt}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="25"
+						y="747"
+						width="522"
+						height="25"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[""+$F{commentaires}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="395"
+						y="786"
+						width="146"
+						height="15"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[""+$F{dateEP}]]></textFieldExpression>
+				</textField>
+				<elementGroup><!--  Start: 11 !-->
+				<rectangle radius="7" >
+					<reportElement
+						mode="Opaque"
+						x="78"
+						y="3"
+						width="395"
+						height="22"
+						backcolor="#12540D"
+						key="rectangle-73"/>
+					<graphicElement stretchType="NoStretch" fill="Solid" />
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="96"
+						y="6"
+						width="332"
+						height="13"
+						forecolor="#FFFFFF"
+						key="staticText-108"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+				<text><![CDATA[TRAITEMENTS D'ORTHOPEDIE DENTO-FACIALE - DEMANDE D'ENTENTE PREALABLE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="204"
+						y="15"
+						width="110"
+						height="13"
+						forecolor="#FFFFFF"
+						key="staticText-109"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+				<text><![CDATA[CHIRURGIEN DENTISTE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="501"
+						y="1"
+						width="61"
+						height="17"
+						forecolor="#12540D"
+						key="staticText-110"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[DATE DE RECEPTION DE LA DEMANDE]]></text>
+				</staticText>
+				<rectangle radius="4" >
+					<reportElement
+						mode="Transparent"
+						x="506"
+						y="15"
+						width="50"
+						height="12"
+						forecolor="#12540D"
+						key="rectangle-74"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<ellipse>
+					<reportElement
+						mode="Opaque"
+						x="28"
+						y="2"
+						width="37"
+						height="19"
+						backcolor="#12540D"
+						key="ellipse-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</ellipse>
+				<staticText>
+					<reportElement
+						x="31"
+						y="1"
+						width="34"
+						height="20"
+						forecolor="#FFFFFF"
+						key="staticText-111"/>
+					<box></box>
+					<textElement>
+						<font fontName="URW Chancery L" size="17"/>
+					</textElement>
+				<text><![CDATA[cerfa]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="26"
+						y="22"
+						width="46"
+						height="12"
+						forecolor="#12540D"
+						key="staticText-112"/>
+					<box></box>
+					<textElement>
+						<font size="6"/>
+					</textElement>
+				<text><![CDATA[N° 10518*01]]></text>
+				</staticText>
+				</elementGroup><!-- End 11 !-->
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="8"
+						y="484"
+						width="20"
+						height="15"
+						key="textField-1"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[(($F{code_acte}.equals("TO90")) && (Integer.parseInt($F{cpt_traitement})==1)?"X":"")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="8"
+						y="495"
+						width="20"
+						height="15"
+						key="textField-2"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[(($F{code_acte}.equals("TO5")) && ($F{code_acte}.equals("TO10"))?"X":"")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="202"
+						y="484"
+						width="20"
+						height="15"
+						key="textField-3"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[((($F{code_acte}.equals("TO90")) && (Integer.parseInt($F{cpt_traitement})>1))?"X":"")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="202"
+						y="495"
+						width="20"
+						height="15"
+						key="textField-4"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[(($F{code_acte}.equals("TO75")) || ($F{code_acte}.equals("TO50"))?"X":"")]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						mode="Opaque"
+						x="329"
+						y="495"
+						width="31"
+						height="1"
+						forecolor="#12540D"
+						key="line-37"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+</graphicElement>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="332"
+						y="483"
+						width="20"
+						height="15"
+						key="textField-5"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[((Integer.parseInt($F{cpt_traitement})>1) && ($F{code_acte}.equals("TO90"))?$F{cpt_traitement}:"")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="332"
+						y="496"
+						width="20"
+						height="15"
+						key="textField-6"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[((Integer.parseInt($F{cpt_traitement})>1) && (($F{code_acte}.equals("TO75")) || ($F{code_acte}.equals("TO50")))?$F{cpt_traitement}:"")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="540"
+						y="441"
+						width="27"
+						height="19"
+						key="textField-7"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[(($F{NUMSECU}.toString().equals("O"))?"VIDE":$F{NUMSECU}.toString().substring(($F{NUMSECU}.toString()).length()-2))]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement
+						mode="Opaque"
+						x="280"
+						y="272"
+						width="14"
+						height="10"
+						forecolor="#12540D"
+						key="rectangle-75"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="280"
+						y="272"
+						width="14"
+						height="10"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-113"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true" isItalic="false"/>
+					</textElement>
+				<text><![CDATA[X]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

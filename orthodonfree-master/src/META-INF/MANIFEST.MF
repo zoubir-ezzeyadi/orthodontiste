@@ -1,0 +1,46 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.6.2
+Created-By: 1.4.2_09-b05 (Sun Microsystems Inc.)
+Built-By: JasperSoft
+Specification-Title: Rule based XML->Java object mapping module
+Specification-Vendor: Apache Software Foundation
+Specification-Version: 1.0
+Implementation-Title: org.apache.commons.digester
+Implementation-Vendor: Apache Software Foundation
+Implementation-Version: 1.0.2
+Main-Class: small.app.FicheConsultationListe
+Extension-Name: org.apache.commons.logging
+Package: org.apache.commons.digester
+Build-Jdk: 1.5.0
+X-COMMENT: Main-Class will be added automatically by build
+Class-Path: .
+
+Name: net/sf/jasperreports/engine/
+Specification-Title: JasperReports Library
+Specification-Version: 3.0.0
+Specification-Vendor: JasperSoft
+Implementation-Title: net.sf.jasperreports.engine
+Implementation-Version: 3.0.0
+Implementation-Vendor: JasperSoft
+
+Name: com/toedter/components/JLocaleChooser.class
+Java-Bean: True
+
+Name: com/toedter/calendar/JCalendar.class
+Java-Bean: True
+
+Name: com/toedter/calendar/JYearChooser.class
+Java-Bean: True
+
+Name: com/toedter/calendar/JMonthChooser.class
+Java-Bean: True
+
+Name: com/toedter/calendar/JDayChooser.class
+Java-Bean: True
+
+Name: com/toedter/calendar/JDateChooser.class
+Java-Bean: True
+
+Name: com/toedter/components/JSpinField.class
+Java-Bean: True
+

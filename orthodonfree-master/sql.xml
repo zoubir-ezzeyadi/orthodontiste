@@ -1,0 +1,86 @@
+<root>
+	<action name="SQLlistepatients" type="query"
+		query="SELECT patient.ID, patient.NOM, patient.PRENOM, patient.DATENAISSANCE, patient.DATECREATION, patient.DATEMODIFICATION, tt.CODE_ACTE, asso.DATE_PROPOSITION, asso.DATE_DEBUT_TRAITEMENT, patient.cpt_traitement, patient.OBSERVATIONS FROM patient as patient LEFT JOIN associations as asso ON (patient.ID = asso.ID_PATIENT)  AND (asso.encours=1) LEFT JOIN types_traitements as tt ON asso.ID_TYPES_TRAITEMENTS = tt.ID ORDER BY patient.NOM"
+		orderParameters="" />
+	<action name="SQLlistePatientLikeNom" type="query"
+		query="SELECT patient.ID, patient.NOM, patient.PRENOM, patient.DATENAISSANCE, patient.DATECREATION, patient.DATEMODIFICATION, tt.CODE_ACTE, asso.DATE_PROPOSITION, asso.DATE_DEBUT_TRAITEMENT, patient.cpt_traitement, patient.OBSERVATIONS FROM patient as patient LEFT JOIN associations as asso ON (patient.ID = asso.ID_PATIENT)  AND (asso.encours=1) LEFT JOIN types_traitements as tt ON asso.ID_TYPES_TRAITEMENTS = tt.ID WHERE patient.NOM like ? ORDER BY patient.NOM"
+		orderParameters="" />
+	<action name="SQLlistepatientsactif" type="query"
+		query="SELECT patient.ID, NOM, PRENOM, DATENAISSANCE, DATECREATION, DATEMODIFICATION, tt.code_acte  as CODE_ACTE, associations.DATE_PROPOSITION, associations.DATE_DEBUT_TRAITEMENT, patient.cpt_traitement, patient.OBSERVATIONS FROM patient, associations, types_traitements as tt WHERE patient.ID=associations.id_patient AND id_types_traitements=1 AND tt.id=id_types_traitements AND associations.encours=1 ORDER BY NOM"
+		orderParameters="" />
+	<action name="SQLlistepatientssurveillance" type="query"
+		query="SELECT patient.ID, NOM, PRENOM, DATENAISSANCE, DATECREATION, DATEMODIFICATION, tt.code_acte  as CODE_ACTE, associations.DATE_PROPOSITION, associations.DATE_DEBUT_TRAITEMENT, patient.cpt_traitement, patient.OBSERVATIONS FROM patient, associations, types_traitements as tt WHERE patient.ID=associations.id_patient AND id_types_traitements=4 AND tt.id=id_types_traitements  AND associations.encours=1 ORDER BY NOM"
+		orderParameters="" />
+	<action name="SQLlistepatientssurveillanceTO10" type="query"
+		query="SELECT patient.ID, NOM, PRENOM, DATENAISSANCE, DATECREATION, DATEMODIFICATION, tt.code_acte  as CODE_ACTE, associations.DATE_PROPOSITION, associations.DATE_DEBUT_TRAITEMENT, patient.cpt_traitement, patient.OBSERVATIONS FROM patient, associations, types_traitements as tt WHERE patient.ID=associations.id_patient AND id_types_traitements=5 AND tt.id=id_types_traitements  AND associations.encours=1 ORDER BY NOM"
+		orderParameters="" />
+	<action name="SQLlistepatientcontention" type="query"
+		query="SELECT patient.ID, NOM, PRENOM, DATENAISSANCE, DATECREATION, DATEMODIFICATION, tt.code_acte  as CODE_ACTE, associations.DATE_PROPOSITION, associations.DATE_DEBUT_TRAITEMENT, patient.cpt_traitement, patient.OBSERVATIONS FROM patient, associations, types_traitements as tt WHERE patient.ID=associations.id_patient AND id_types_traitements=2 AND tt.id=id_types_traitements  AND associations.encours=1 ORDER BY NOM"
+		orderParameters="" />
+	<action name="SQLlistepatientcontention50" type="query"
+		query="SELECT patient.ID, NOM, PRENOM, DATENAISSANCE, DATECREATION, DATEMODIFICATION, tt.code_acte  as CODE_ACTE, associations.DATE_PROPOSITION, associations.DATE_DEBUT_TRAITEMENT, patient.cpt_traitement, patient.OBSERVATIONS FROM patient, associations, types_traitements as tt WHERE patient.ID=associations.id_patient AND id_types_traitements=3 AND tt.id=id_types_traitements  AND associations.encours=1 ORDER BY NOM"
+		orderParameters="" />
+	<action name="SQLlistepatientstop" type="query"
+		query="SELECT patient.ID, NOM, PRENOM, DATENAISSANCE, DATECREATION, DATEMODIFICATION, tt.code_acte  as CODE_ACTE, associations.DATE_PROPOSITION, associations.DATE_DEBUT_TRAITEMENT, patient.cpt_traitement, patient.OBSERVATIONS FROM patient, associations, types_traitements as tt WHERE patient.ID=associations.id_patient AND id_types_traitements=6 AND tt.id=id_types_traitements  AND associations.encours=1 ORDER BY NOM"
+		orderParameters="" />
+	<action name="SQLlistepatientsrenouv" type="query"
+		query="SELECT patient.ID, patient.NOM, patient.PRENOM, patient.DATENAISSANCE, patient.DATECREATION, patient.DATEMODIFICATION, tt.CODE_ACTE, asso.DATE_PROPOSITION, asso.DATE_DEBUT_TRAITEMENT, patient.cpt_traitement, tt.duree, tt.periodicite, patient.OBSERVATIONS FROM patient as patient LEFT JOIN associations as asso ON (patient.ID = asso.ID_PATIENT) AND (asso.encours=1) LEFT JOIN types_traitements as tt ON asso.ID_TYPES_TRAITEMENTS = tt.ID AND (tt.ID &lt; 6) WHERE (patient.cpt_traitement>0) ORDER BY patient.NOM"
+		orderParameters="" />
+	<action name="SQLnblignespatient" type="query"
+		query="SELECT COUNT(*) FROM patient as patient LEFT JOIN associations as asso ON (patient.ID = asso.ID_PATIENT)  AND (patient.DATEMODIFICATION = asso.DATE_PROPOSITION) LEFT JOIN types_traitements as tt ON asso.ID_TYPES_TRAITEMENTS = tt.ID ORDER BY patient.NOM"
+		orderParameters="" />
+	<action name="SQLUpdatePatientDateModif" type="query"
+		query="UPDATE patient SET DATEMODIFICATION=? WHERE ID=?"
+		orderParameters="" />
+	<action name="SQLUpdatePatientTypeTraitement" type="query"
+		query="UPDATE associations SET id_types_traitements=?, date_debut_traitement=? WHERE id_patient=?"
+		orderParameters="" />
+	<action name="SQLUpdatePatientCptTrait" type="query"
+		query="UPDATE patient SET cpt_traitement=? WHERE ID=?"
+		orderParameters="" />
+	<action name="SQLUpdatePatientObervations" type="query"
+		query="UPDATE patient SET OBSERVATIONS=? WHERE ID=?" orderParameters="" />
+	<action name="SQLUpdateDateDebutTrait" type="query"
+		query="UPDATE associations SET date_debut_traitement=? WHERE id_patient=? and encours=1"
+		orderParameters="" />
+	<action name="SQLUpdateDateProposition" type="query"
+		query="UPDATE associations SET date_proposition=? WHERE id_patient=? and encours=1"
+		orderParameters="" />
+	<action name="SQLUpdateEncoursAssociation" type="query"
+		query="UPDATE associations SET encours=0 WHERE id_patient=? and encours=1"
+		orderParameters="" />
+	<action name="SQLDeletePatient" type="query"
+		query="DELETE FROM patient WHERE id=?" orderParameters="" />
+	<action name="SQLInsertPatientTypeTraitement" type="query"
+		query="INSERT INTO associations (id_patient,id_types_traitements,date_debut_traitement,date_PROPOSITION) VALUES (?,?,?,?)"
+		orderParameters="" />
+	<action name="SQLInsertNewPatient" type="query"
+		query="INSERT into patient (PRENOM, NOM, DATENAISSANCE, ADRESSE, ADRESSESUITE, TELEPHONE, TELEPHONEALTERNATIF, CODEPOSTAL, VILLE,  DATEMODIFICATION, DATECREATION, NUMSECU) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)"
+		orderParameters="" />
+	<action name="SQLUpdatePatient" type="query"
+		query="UPDATE patient set PRENOM=?, NOM=?, DATENAISSANCE=?, ADRESSE=?,ADRESSESUITE=?,TELEPHONE=?, TELEPHONEALTERNATIF=?, CODEPOSTAL=?, VILLE=?, NUMSECU=?  WHERE id=?"
+		orderParameters="" />
+	<action name="SQLepdatabyidpatient" type="query"
+		query="SELECT nom, prenom, numsecu, DATENAISSANCE, DATECREATION, code_acte, asso.* FROM patient, associations as asso, types_traitements as tt where patient.id=? and patient.id=asso.id_patient and id_types_traitements=tt.id and asso.encours=1"
+		orderParameters="" />
+	<action name="SQLUpdateEpPojobyidpatient" type="query"
+		query="UPDATE associations SET anBasMaxPro=?, anBasMaxEndo=?, anBasMaxHypo=?, anBasMaxRetro=?, anBasMaxExo=?, anBasManPro=?, anBasManEndo=?, anBasManHyper=?, anBasManRetro=?, anBasManExo=?, anAlvMaxPro=?, anAlvMaxEndo=?, anAlvMaxSupra=?, anAlvMaxRetro=?, anAlvMaxExo=?, anAlvManPro=?, anAlvManEndo=?, anAlvManInfra=?, anAlvManRetro=?, anAlvManExo=?, cdmCI_I=?, cdmCI_II=?, cdmCI_III=?, cdmtxt=?, cdcCI_I=?, cdcCI_II=?, cdcCI_III=?, cdctxt=?, dysDentMax=?, dysDentDent=?, agnesietxt=?, dentInclSurnumtxt=?, malpositiontxt=?, occInvDroite=?, occInvGauche=?, occInvAnt=?, facteurFoncttxt=?, planTraittxt=?, commentaires=?, dateEP=? where id_patient=? and encours=1"
+		orderParameters="" />
+	<action name="SQLverifexistasso" type="query"
+		query="SELECT id from associations WHERE id_patient=? AND date_debut_traitement=?"
+		orderParameters="" />
+	<action name="SQLupdateAsso" type="query"
+		query="UPDATE associations SET id_types_traitements=? WHERE id=?"
+		orderParameters="" />
+	<action name="SQLSelectPtientById" type="query"
+		query="SELECT * FROM patient WHERE id=?" orderParameters="" />
+	<action name="SQLSelectPatientByNomPrenomDateNaiss" type="query"
+		query="SELECT ID, NOM, PRENOM, DATENAISSANCE FROM patient WHERE NOM=? AND PRENOM=? AND DATENAISSANCE=?"
+		orderParameters="" />
+	<action name="SQLUpdatePatientByIdForNumSecuAdresseCPVilleTel"
+		type="query"
+		query="UPDATE patient set ADRESSE=?,ADRESSESUITE=?,TELEPHONE=?, CODEPOSTAL=?, VILLE=?, NUMSECU=?  WHERE id=?"
+		orderParameters="" />
+</root>
+
+
